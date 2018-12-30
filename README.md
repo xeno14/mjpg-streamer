@@ -40,8 +40,9 @@ Output plugins:
 * output_file
 * output_http ([documentation](mjpg-streamer-experimental/plugins/output_http/README.md))
 * ~output_rtsp~ (not functional)
-* output_udp
+* ~output_udp~ (not functional)
 * output_viewer ([documentation](mjpg-streamer-experimental/plugins/output_viewer/README.md))
+* output_zmqserver ([documentation](mjpg-streamer-experimental/plugins/output_zmqserver/README.md))
 
 Building & Installation
 =======================
@@ -50,6 +51,10 @@ You must have cmake installed. You will also probably want to have a development
 version of libjpeg installed. I used libjpeg8-dev. e.g.
 
     sudo apt-get install cmake libjpeg8-dev
+
+If you do not have gcc (and g++ for the opencv plugin) you may need to install those.
+
+    sudo apt-get install gcc g++
 
 Simple compilation
 ------------------
