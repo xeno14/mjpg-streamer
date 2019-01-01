@@ -74,7 +74,7 @@ class MjpgStreamerServerImpl final : public MjpgStreamer::Service {
   }
 };
 
-void run_server() {
+void *run_server(void* args) {
   std::string server_address("0.0.0.0:50051");
   MjpgStreamerServerImpl service;
 
@@ -275,10 +275,9 @@ int output_run(int id)
     DBG("launching server thread #%02d\n", id);
 
     /* create thread and pass context to thread function */
-    // pthread_create(&(servers[id].threadID), NULL, server_thread, &(servers[id]));
-    // pthread_detach(servers[id].threadID);
-    //
-    run_server();
+    pthread_t threadID;
+    pthread_create(&threadID, NULL, run_server, nullptr);
+    pthread_detach(threadID);
 
     return 0;
 }

@@ -14,8 +14,5 @@ enable_language(CXX)
 
   MJPG_STREAMER_PLUGIN_COMPILE(output_grpc output_grpc.cpp ${PROTO_SRCS} ${GRPC_SRCS})
 
-  target_link_libraries(output_grpc
-    gRPC::grpc++_reflection
-    protobuf::libprotobuf
-  )
+  target_link_libraries(output_grpc gRPC::grpc++_reflection protobuf::libprotobuf)
 endif()
