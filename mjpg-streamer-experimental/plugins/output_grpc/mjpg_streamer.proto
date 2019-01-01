@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mjpg_streamer;
+
+service MjpgStreamer {
+  // TODO returns stream
+  rpc StreamFrame(Request) returns (Frame) {}
+}
+
+message Request {
+  // empty
+}
+
+// The request message containing the user's name.
+message Frame {
+  // TODO bytes
+  string payload = 1;
+}
